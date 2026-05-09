@@ -40,4 +40,14 @@ export default StyleSheet.create({
   pickerItem: {
     height: 44,
   },
+  imageContainer: {
+    alignItems: 'center',
+    marginBottom: 16,
+  },
+  foodImage: {
+    width: 180,
+    height: 120,
+    borderRadius: 14,
+    backgroundColor: '#fff',
+  },
 });

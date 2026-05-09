@@ -1,7 +1,13 @@
 import React from 'react';
-import { View, Text, TextInput } from 'react-native';
+import { View, Text, TextInput, Image } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import styles from '../../styles/ContentStyles';
+
+const foodImages = {
+  'Hambúrguer': require('../../assets/sandwich.jpeg'),
+  Pizza: require('../../assets/pizza.jpeg'),
+  'Hot Dog': require('../../assets/hotdog.jpeg'),
+};
 
 export default function Content({ name, setName, snack, setSnack, note, setNote }) {
   return (
@@ -24,8 +30,14 @@ export default function Content({ name, setName, snack, setSnack, note, setNote 
           <Picker.Item label="Hambúrguer" value="Hambúrguer" />
           <Picker.Item label="Pizza" value="Pizza" />
           <Picker.Item label="Hot Dog" value="Hot Dog" />
-          <Picker.Item label="Pastel" value="Pastel" />
         </Picker>
+      </View>
+      <View style={styles.imageContainer}>
+        <Image
+          source={foodImages[snack]}
+          style={styles.foodImage}
+          resizeMode="contain"
+        />
       </View>
       <TextInput
         style={[styles.input, styles.textArea]}
